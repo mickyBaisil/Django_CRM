@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>RECORD</h1><br/>
+<table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th scope="col">Zipcode</th>
+        <th scope="col">Created on</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{customer_record.first_name}} {{customer_record.last_name}}</td>
+        <td>{{customer_record.email}}</td>
+        <td>{{customer_record.phone }}</td>
+        <td>{{customer_record.address}}</td>
+        <td>{{customer_record.city}}</td>
+        <td>{{customer_record.state}}</td>
+        <td>{{customer_record.zipcode}}</td>
+        <td>{{customer_record.created_at}}</td>
+        <td>{{customer_record.id}} </td>
+      </tr>
+    </tbody>
+<a href = "{% url 'home' %}" class = "btn btn-secondary">BACK</a>
+<a href = "{% url 'delete_record' customer_record.id %}" class = "btn btn-danger">DELETE</a>
+<a href = "{% url 'update_record' customer_record.id %}" class = "btn btn-secondary">UPDATE RECORD</a>
+    
+{% endblock %}
